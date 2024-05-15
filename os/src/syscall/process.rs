@@ -57,9 +57,9 @@ pub fn sys_task_info(_ti: *mut TaskInfo) -> isize {
     let current_task = get_current_task();
     unsafe {
         *_ti = TaskInfo {
-        status: current_task.task_status,
-        syscall_times: current_task.syscall_times,
-        time: get_time() - current_task.begin_time
+            status: current_task.task_status,
+            syscall_times: current_task.syscall_times,
+            time: get_time() - current_task.begin_time
         };
     }
     0
